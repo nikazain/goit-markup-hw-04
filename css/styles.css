@@ -371,7 +371,7 @@ img {
   padding-bottom: 120px;
 }
 .customers-item {
-  width: calc((100%-120px) / 6);
+  width: calc((100% - 120px) / 6);
   height: 88px;
 }
 .customers-link {
