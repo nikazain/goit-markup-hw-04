@@ -79,6 +79,8 @@ img {
   border-bottom: 1px solid var(--cornflower, #e7e9fc);
   background: var(--white, #fff);
   width: 1158px;
+  box-shadow: зі значенням 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 
   transition: background-color 300ms ease, backdrop-filter 300ms ease;
 
@@ -129,9 +131,7 @@ img {
   letter-spacing: 0.02em;
   color: var(--color-navy-blue);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-nav-item:hover,
 .header-nav-item:focus {
@@ -145,6 +145,8 @@ img {
   width: 100%;
   height: 4px;
   border-radius: 2px;
+  bottom: -1px;
+  background-color: var(--color-ocean);
 }
 .header-nav-item.active::after {
   padding: 0;
@@ -199,7 +201,8 @@ img {
     url(../images/images_for_hw4/background/people-office\ 1.png);
   background-repeat: no-repeat;
   background-size: cover;
-
+  background-position: center;
+  max-width: 1440px;
   padding: 188px 0;
 }
 .btn {
@@ -209,6 +212,7 @@ img {
   margin: 0 auto;
   width: 169px;
   height: 56px;
+
   font-family: inherit;
   font-size: 16px;
   line-height: 1.5;
@@ -219,10 +223,10 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .btn:hover,
 .btn:focus {
   color: var(--color-white);
@@ -322,7 +326,7 @@ img {
   margin-bottom: 8px;
 }
 .team-card {
-  padding: 32px 16px;
+  padding: 32px 0px;
 }
 .media {
   display: flex;
@@ -340,21 +344,21 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  fill: var(--color-white);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .media-link:hover,
 .media-link:focus {
-  background-color: #404bbf;
+  background-color: var(--color-ocean);
+}
+.media-svg {
+  fill: var(--color-cloud);
 }
 /* Customers */
 .customers {
+  padding: 120px 0;
 }
 .customers-title {
-  padding-top: 120px;
-  padding-bottom: 72px;
+  margin-bottom: 72px;
 }
 .customers-list {
   display: flex;
@@ -363,20 +367,26 @@ img {
   gap: 24px;
   padding-bottom: 120px;
 }
-.customers-icon {
+.customers-item {
+  height: 88px;
+}
+.customers-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--color-light-slate);
   border-radius: 4px;
-  border: 1px solid var(--lightslate, #8e8f99);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-icon {
-  fill: var(--color-light-slate);
-
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: currentColor;
 }
-.customers-icon:hover,
-.customers-icon:focus {
-  fill: var(--color-ocean);
+.customers-link:hover,
+.customers-link:focus {
+  color: var(--color-ocean);
   border-color: var(--color-ocean);
 }
 /* Footer */
@@ -385,6 +395,19 @@ img {
   padding: 100px 0;
   background-color: var(--color-navy-blue);
 }
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+.container-info {
+  display: block;
+  padding-left: 120px;
+  margin-right: 120px;
+}
+.container-media {
+  display: block;
+}
+
 .logo-footer {
   display: inline-block;
   margin-bottom: 16px;
@@ -403,7 +426,13 @@ img {
 .footer-desc {
   width: 264px;
   line-height: 24px;
-  color: var(--color-cloud);
+  color: var(--color-white);
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
 }
 .footer-list {
   display: flex;
@@ -415,27 +444,21 @@ img {
 .footer-item {
   width: 40px;
   height: 40px;
-  fill: var(--color-white);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-link {
   background-color: var(--color-iris);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.footer-item:hover,
-.footer-item:focus {
+.footer-link:hover,
+.footer-link:focus {
   background-color: #31d0aa;
 }
-.container-info {
-  display: block;
-  padding-left: 120px;
-  min-width: 264px;
-}
-.container-media {
-  display: block;
+.footer-icon {
+  fill: var(--color-cloud);
 }
 
 /* Portfolio */
@@ -489,6 +512,8 @@ img {
   border-radius: 4px;
   border: 1px solid var(--cornflower, #e7e9fc);
   border: 1px solid transparent;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 /* Main Bit */
 .main-list {
@@ -512,6 +537,8 @@ img {
   align-items: flex-start;
   gap: 32px;
   flex-shrink: 0;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .main-text {
   padding: 32px 16px;
@@ -523,6 +550,10 @@ img {
   background: var(--color-white);
   border: 1px solid;
   border-color: var(--color-cornflower);
+}
+.article-link {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .article-title {
   padding: 0;
@@ -544,9 +575,7 @@ img {
   position: relative;
   overflow: hidden;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .overlay {
   position: absolute;
@@ -579,6 +608,8 @@ img {
   height: 100%;
   background: var(--navyblue-modal, rgba(46, 47, 66, 0.4));
   backdrop-filter: blur(2px);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -591,7 +622,7 @@ img {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   width: 408px;
-  min-height: 576px;
+  min-height: 584px;
   background: #fcfcfc;
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
