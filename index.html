@@ -61,7 +61,9 @@
       <section class="hero">
         <div class="container">
           <h1 class="main-title">Effective Solutions for Your Business</h1>
-          <button type="button" class="btn">Order Service</button>
+          <button type="button" class="btn" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
       <!-- 4 facts -->
@@ -411,7 +413,7 @@
       </div>
       <div class="container container-media">
         <p class="footer-desc">Social Media</p>
-        <ul class="footer-list list">
+        <ul class="footer-list">
           <li class="footer-item">
             <a class="footer-link" href=""></a
             ><svg class="footer-icon" width="25px" height="25px">
@@ -440,14 +442,16 @@
       </div>
     </footer>
     <!-- Modal Window -->
-    <div class="backdrop">
+    <div class="backdrop" data-modal>
       <div class="modal">
-        <button class="modal-close-btn">
+        <button class="modal-close-btn" data-modal-close>
           <svg class="modal-close-icon" width="8" height="8">
             <use href="./images/images_for_hw4/icons.svg#close"></use>
           </svg>
         </button>
       </div>
     </div>
+    <!-- Scripts -->
+    <script src="./js/modal.js"></script>
   </body>
 </html>
